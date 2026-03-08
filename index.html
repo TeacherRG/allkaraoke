@@ -17,6 +17,15 @@
       name="description"
       content="100% Free online SingStar-like Karaoke party game - 4,400+ songs and counting! No download needed, just use your phone or a regular/SingStar mic to sing" />
     <script>
+      // Handle SPA redirect from 404.html (GitHub Pages routing fallback)
+      (function () {
+        var redirect = new URLSearchParams(window.location.search).get('redirect');
+        if (redirect) {
+          window.history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
+    <script>
       var global = window; // Some scripts rely on `global` which is node-only
     </script>
   </head>
